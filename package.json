@@ -1,8 +1,11 @@
 {
-  "name": "demo-app",
+  "name": "hnr-app",
   "version": "1.0.0",
-  "author": "Aravind",
-  "description": "set up files for the first Demo App",
+  "author": "Vijay Kumar",
+  "description": "Hacker news reader application",
+  "scripts": {
+      "build:dev": "webpack --progress"
+  },
   "dependencies": {
     "@angular/common": "2.4.0",
     "@angular/compiler": "2.4.0",
@@ -18,6 +21,8 @@
     "zone.js": "0.7.4"
   },
   "devDependencies": {
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.2.1",
     "webpack": "^3.3.0"
   }
 }
