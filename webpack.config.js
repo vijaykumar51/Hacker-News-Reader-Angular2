@@ -3,17 +3,20 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        app: './src/main.ts',
-        vendor: './src/vendor.ts'
+        app: "./src/main.ts",
+        vendor: "./src/vendor.ts"
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: '[name].js'
+        filename: "[name].js"
+    },
+    resolve: {
+        extensions: [".ts", ".js"]
     },
     module: {
         rules: [
             {
-                test: /\.tsx$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: ["awesome-typescript-loader", "angular2-template-loader"]
             }
@@ -21,7 +24,12 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            names:['vendor']
+            names:["vendor"]
         })
-    ]
+    ],
+    devtool: "source-map",
+    devServer: {
+        contentBase: path.join(__dirname, ""),
+        port: 9000
+    }
 }

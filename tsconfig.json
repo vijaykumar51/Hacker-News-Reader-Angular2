@@ -1,13 +1,14 @@
 {
     "version": "2.0.2",
     "compilerOptions": {
-        "lib": ["es5", "es6"],
+        "lib": ["es5", "es6", "dom"],
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "skipLibCheck": true
     },
     "exclude": [
         "node_modules"
