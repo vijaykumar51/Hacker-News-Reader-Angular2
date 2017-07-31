@@ -1,13 +1,9 @@
 import { Component } from "@angular/core";
-import { ViewEncapsulation } from "@angular/core";
-
-
 
 @Component({
     selector: "hnr-app",
     template: `
-        <h1>This is App component</h1>
-        Hello user
+        <header-component></header-component>
         <router-outlet></router-outlet>
     `,
     styleUrls: ["./app.component.css"]

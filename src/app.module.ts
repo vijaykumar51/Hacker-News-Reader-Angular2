@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from "./app.component";
-import { AskComponent, JobComponent, NewsComponent, ShowComponent } from "./component-collection";
+import { AskComponent, HeaderComponent, JobComponent, NewsComponent, ShowComponent } from "./component-collection";
 
 const appRoutes: Routes = [
     {path: "", redirectTo: "news", pathMatch: "full"},
@@ -15,7 +15,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [BrowserModule, RouterModule.forRoot(appRoutes, {useHash: true})],
-    declarations: [AppComponent],
+    declarations: [AppComponent, HeaderComponent, NewsComponent, ShowComponent, AskComponent, JobComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule{
