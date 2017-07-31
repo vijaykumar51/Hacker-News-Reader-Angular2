@@ -18,7 +18,11 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                loader: ["awesome-typescript-loader", "angular2-template-loader"]
+                loaders: ["awesome-typescript-loader", "angular2-template-loader"]
+            },
+            {
+                test: /\.css$/,
+                loaders: ["to-string-loader", "style-loader", "css-loader"]
             }
         ]
     },
@@ -32,4 +36,4 @@ module.exports = {
         contentBase: path.join(__dirname, ""),
         port: 9000
     }
-}
+};
