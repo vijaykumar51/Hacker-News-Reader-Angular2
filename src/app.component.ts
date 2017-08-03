@@ -3,8 +3,10 @@ import { Component } from "@angular/core";
 @Component({
     selector: "hnr-app",
     template: `
-        <header-component></header-component>
-        <router-outlet></router-outlet>
+        <div class="app-container">
+            <header-component></header-component>
+            <router-outlet></router-outlet>
+        </div>    
     `,
     styleUrls: ["./app.component.css"]
 })

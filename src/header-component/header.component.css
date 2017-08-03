@@ -1,3 +1,30 @@
-h1{
-    color: red;
+.header{
+    background: #b92b27;
+    color: #ccc;
+}
+
+.header .image-container{
+    width: 40%;
+}
+
+.header .image-container .image{
+    background: url("../../assets/logo.svg");
+}
+
+.header .link-container{
+    width: 60%;
+}
+
+.header .link-list .link-element{
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.header .link-list a{
+    text-decoration: none;
+    color: #ccc;
+}
+
+.header .link-list .link-element a:hover{
+    text-decoration: underline;
 }

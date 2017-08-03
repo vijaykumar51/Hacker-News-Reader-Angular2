@@ -21,8 +21,20 @@ module.exports = {
                 loaders: ["awesome-typescript-loader", "angular2-template-loader"]
             },
             {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                loaders: ["raw-loader"]
+            },
+            {
                 test: /\.css$/,
                 loaders: ["to-string-loader", "style-loader", "css-loader"]
+            },
+            {
+                test: /\.(jpg|svg|png)$/,
+                loader: "file-loader",
+                options: {
+                    name: '[path][name].[ext]',
+                }  
             }
         ]
     },
