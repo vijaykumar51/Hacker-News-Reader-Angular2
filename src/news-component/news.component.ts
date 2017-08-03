@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Http } from "@angular/http";
+import { ApiService } from "../services/api.service";
 
 @Component({
     selector: "news-component",
@@ -6,6 +8,18 @@ import { Component } from "@angular/core";
         <h1>This is news Component</h1>
     `
 })
-export class NewsComponent{
+export class NewsComponent implements OnInit{
+    
+    public newsList;
+
+    constructor(private apiService: ApiService){}
+
+    ngOnInit(){
+        this.apiService.newsHttpRequest(1).subscribe(response => {
+            console.log(response);
+            this.newsList = response;
+        })
+    }
+
 
 }

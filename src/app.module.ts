@@ -1,9 +1,11 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from "@angular/router";
+import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
 import { AskComponent, HeaderComponent, JobComponent, NewsComponent, ShowComponent } from "./component-collection";
+import { ApiService } from "./services/api.service";
 
 const appRoutes: Routes = [
     {path: "", redirectTo: "news", pathMatch: "full"},
@@ -14,8 +16,9 @@ const appRoutes: Routes = [
 ]
 
 @NgModule({
-    imports: [BrowserModule, RouterModule.forRoot(appRoutes, {useHash: true})],
+    imports: [BrowserModule, HttpModule, RouterModule.forRoot(appRoutes, {useHash: true})],
     declarations: [AppComponent, HeaderComponent, NewsComponent, ShowComponent, AskComponent, JobComponent],
+    providers: [ApiService],
     bootstrap: [AppComponent]
 })
 export class AppModule{
