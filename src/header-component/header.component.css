@@ -1,18 +1,23 @@
 .header{
     background: #b92b27;
-    color: #ccc;
+    font-family: "HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif";
 }
 
 .header .image-container{
-    width: 40%;
+    display: inline-block;
 }
 
 .header .image-container .image{
-    background: url("../../assets/logo.svg");
+    height: 70px;
+    width: 70px;
+    background: url("../../assets/logo.svg") no-repeat center;
+    background-size: 60px 60px;
 }
 
 .header .link-container{
-    width: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
 }
 
 .header .link-list .link-element{
@@ -22,7 +27,7 @@
 
 .header .link-list a{
     text-decoration: none;
-    color: #ccc;
+    color: #fff;
 }
 
 .header .link-list .link-element a:hover{
