@@ -21,5 +21,13 @@ export class NewsComponent implements OnInit {
 		});
 	}
 
+	public newPublicFunc(){
+		var a = 4;
+	}
+
+	private abc() {
+		console.log("hello");
+	}
+
 
 }

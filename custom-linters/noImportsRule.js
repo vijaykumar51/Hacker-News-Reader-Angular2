@@ -30,7 +30,6 @@ var NoImportsWalker = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NoImportsWalker.prototype.visitImportDeclaration = function (node) {
-        console.log("node", node);
         // create a failure at the current position
         this.addFailure(this.createFailure(node.getStart(), node.getWidth(), Rule.FAILURE_STRING));
         // call the base version of this visitor to actually parse this node

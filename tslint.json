@@ -3,7 +3,8 @@
 		"./custom-linters/"
 	],
 	"rules": {
-		"no-imports": true,
+		"public-doc": true,
+		"no-imports": false,
 		"class-name": true,
 		"comment-format": [
 			true,
