@@ -3,23 +3,23 @@ import { Http } from "@angular/http";
 import { ApiService } from "../services/api.service";
 
 @Component({
-    selector: "news-component",
-    template: `
+	selector: "news-component",
+	template: `
         <h1>This is news Component</h1>
     `
 })
-export class NewsComponent implements OnInit{
-    
-    public newsList;
+export class NewsComponent implements OnInit {
 
-    constructor(private apiService: ApiService){}
+	public newsList;
 
-    ngOnInit(){
-        this.apiService.newsHttpRequest(1).subscribe(response => {
-            console.log(response);
-            this.newsList = response;
-        })
-    }
+	constructor(private apiService: ApiService) { }
+
+	public ngOnInit() {
+		this.apiService.newsHttpRequest(1).subscribe(response => {
+			console.log(response);
+			this.newsList = response;
+		});
+	}
 
 
 }
