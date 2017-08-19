@@ -1,6 +1,12 @@
 <div class="news-core-info">
-	<div class="news-title">{{news.title}}</div>
+	<div class="news-title">
+		<a href="{{news.url}}" target="_blank">{{news.title}}</a>
+		<span class="domain">({{news.domain}})</span>
+	</div>
 	<div class="news-details">
-		<span class="points-by">{{news.points}} points by</span> <span class="link">{{news.user}}</span>  <span class="user-time-info">{{news.time_ago}} | {{news.comments_count}} comments</span>
+		<span class="points-by">{{news.points}} points by</span>
+		<a class="link" [routerLink]="['/user']">{{news.user}}</a>
+		<span class="user-time-info">{{news.time_ago}} |</span>
+		<a class="link" [routerLink]="['/item']">{{news.comments_count}} comments</a>
 	</div>
 </div>
