@@ -4,7 +4,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
-import { AskComponent, HeaderComponent, JobComponent, NewsComponent, ShowComponent } from "./components/component-collection";
+import { AskComponent, HeaderComponent, ItemComponent, JobComponent,
+	NewsComponent, ShowComponent } from "./components/component-collection";
 import { ApiService } from "./services/api.service";
 
 const appRoutes: Routes = [
@@ -16,10 +17,10 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+	bootstrap: [AppComponent],
+	declarations: [AppComponent, HeaderComponent, ItemComponent, NewsComponent, ShowComponent, AskComponent, JobComponent],
 	imports: [BrowserModule, HttpModule, RouterModule.forRoot(appRoutes, { useHash: true })],
-	declarations: [AppComponent, HeaderComponent, NewsComponent, ShowComponent, AskComponent, JobComponent],
 	providers: [ApiService],
-	bootstrap: [AppComponent]
 })
 export class AppModule {
 	constructor() {

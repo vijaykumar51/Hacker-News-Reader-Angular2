@@ -1,0 +1,19 @@
+.news-core-info{
+	border-bottom: 1px solid #aaa;
+}
+
+.news-core-info .news-title{
+	font-size: 16px;
+}
+
+.news-core-info .points-by,
+.news-core-info .user-time-info {
+	color: #999;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .5;
+}
+
+.news-core-info .user-time-info{
+	padding-left: 10px;
+}
