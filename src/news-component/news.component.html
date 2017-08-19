@@ -1,0 +1,12 @@
+<div class="main-content">
+	<div class="list-container">
+		<ol start="1">
+			<li class="news-element-container" *ngFor="let news of newsList">
+				<div class="news-core-info">
+					<p class="news-title">{{news.title}}</p>
+					<p><span class="points-by">{{news.points}} points by</span> {{news.user}} {{news.time_ago}} | {{news.comments_count}} comments</p>
+				</div>
+			</li>
+		</ol>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+.main-content .list-container{
+	padding: 5px 0px;
+	background-color: #ccc;
+}
+
+.main-content .list-container .news-element-container{
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #000;
+}
+
+.main-content .news-element-container .news-core-info .points-by {
+	color: #999;
+}

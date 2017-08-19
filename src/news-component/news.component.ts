@@ -1,16 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { Http } from "@angular/http";
 import { ApiService } from "../services/api.service";
+import { NewsFeed } from "../models/model-collection";
 
 @Component({
 	selector: "news-component",
-	template: `
-        <h1>This is news Component</h1>
-    `
+	styleUrls: ["./news.component.css"],
+	templateUrl: "./news.component.html",
 })
 export class NewsComponent implements OnInit {
 
-	public newsList;
+	public newsList: NewsFeed[] = [];
 
 	constructor(private apiService: ApiService) { }
 
@@ -20,14 +20,5 @@ export class NewsComponent implements OnInit {
 			this.newsList = response;
 		});
 	}
-
-	public newPublicFunc(){
-		var a = 4;
-	}
-
-	private abc() {
-		console.log("hello");
-	}
-
 
 }
