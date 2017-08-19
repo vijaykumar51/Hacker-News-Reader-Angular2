@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Http } from "@angular/http";
-import { ApiService } from "../services/api.service";
-import { NewsFeed } from "../models/model-collection";
+import { ApiService } from "../../services/api.service";
+import { NewsFeed } from "../../models/model-collection";
 
 @Component({
 	selector: "news-component",
