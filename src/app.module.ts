@@ -5,7 +5,7 @@ import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
 import { AskComponent, HeaderComponent, ItemComponent, JobComponent,
-	NewsComponent, ShowComponent } from "./components/component-collection";
+	NewsComponent, ShowComponent, FooterComponent } from "./components/component-collection";
 import { ApiService } from "./services/api.service";
 
 const appRoutes: Routes = [
@@ -18,7 +18,8 @@ const appRoutes: Routes = [
 
 @NgModule({
 	bootstrap: [AppComponent],
-	declarations: [AppComponent, HeaderComponent, ItemComponent, NewsComponent, ShowComponent, AskComponent, JobComponent],
+	declarations: [AppComponent, HeaderComponent, ItemComponent, NewsComponent,
+		FooterComponent, ShowComponent, AskComponent, JobComponent],
 	imports: [BrowserModule, HttpModule, RouterModule.forRoot(appRoutes, { useHash: true })],
 	providers: [ApiService],
 })

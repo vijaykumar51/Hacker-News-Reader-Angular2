@@ -4,3 +4,4 @@ export { JobComponent } from "./job-component/job.component";
 export { AskComponent }from "./ask-component/ask.component";
 export { ShowComponent } from "./show-component/show.component";
 export { HeaderComponent } from "./header-component/header.component";
+export { FooterComponent } from "./footer-component/footer.component";

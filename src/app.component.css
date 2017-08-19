@@ -8,3 +8,13 @@ body{
     margin: 0px auto;
 	font-family: "HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif"
 }
+
+.link{
+	color: #b92b27;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.link:hover{
+	text-decoration: underline;
+}

@@ -1,6 +1,7 @@
 .main-content{
 	background-color: #eee;
-	padding: 10px;
+	padding: 10px 10px 0px 10px;
+	border-bottom: 2px solid #b92b27;
 }
 
 .main-content .list-container{
