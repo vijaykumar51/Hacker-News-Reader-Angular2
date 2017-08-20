@@ -5,8 +5,8 @@ import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
 import {
-	AskComponent, HeaderComponent, ItemComponent, JobComponent,
-	NewsComponent, ShowComponent, FooterComponent
+	HeaderComponent, ItemComponent,
+	NewsComponent, FooterComponent
 } from "./components/component-collection";
 import { ApiService } from "./services/api.service";
 
@@ -18,15 +18,15 @@ const feedRoutes = [{
 const appRoutes: Routes = [
 	{ path: "", redirectTo: "news/1", pathMatch: "full" },
 	{ path: "news", children: feedRoutes, data: { feedType: "news" } },
-	{ path: "show", component: ShowComponent },
-	{ path: "ask", component: AskComponent },
-	{ path: "jobs", component: JobComponent }
+	{ path: "show", children: feedRoutes, data: { feedType: "news" } },
+	{ path: "ask", children: feedRoutes, data: { feedType: "news" } },
+	{ path: "jobs", children: feedRoutes, data: { feedType: "news" }}
 ];
 
 @NgModule({
 	bootstrap: [AppComponent],
 	declarations: [AppComponent, HeaderComponent, ItemComponent, NewsComponent,
-		FooterComponent, ShowComponent, AskComponent, JobComponent],
+		FooterComponent],
 	imports: [BrowserModule, HttpModule, RouterModule.forRoot(appRoutes, { useHash: false })],
 	providers: [ApiService],
 })
