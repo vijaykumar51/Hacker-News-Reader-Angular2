@@ -11,7 +11,7 @@ export class ApiService {
 
 	constructor(private http: Http) { }
 
-	public newsHttpRequest(pageNumber: number): Observable<any> {
+	public newsHttpRequest(feedType: string, pageNumber: number): Observable<any> {
 
 		let urlSearchParams: URLSearchParams = new URLSearchParams();
 		urlSearchParams.set("page", pageNumber.toString());
@@ -19,7 +19,9 @@ export class ApiService {
 		let requestOptions = new RequestOptions();
 		requestOptions.search = urlSearchParams;
 
-		return this.http.get(Config.newsUrl, requestOptions)
+		let url = Config.urls[feedType];
+
+		return this.http.get(url, requestOptions)
 			.map((res: Response) => res.json())
 			.catch((error: any) => Observable.throw(error.json().error || "Server Error"));
 	}

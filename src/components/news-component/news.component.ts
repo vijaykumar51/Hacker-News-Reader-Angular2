@@ -10,20 +10,29 @@ import { NewsFeed } from "../../models/model-collection";
 	templateUrl: "./news.component.html",
 })
 export class NewsComponent implements OnInit {
-	public pageNumber: number;
-
+	public feedType: string;
+	public currentPageNumber: number;
+	public nextPageNumber: number;
+	public feedStartNumber: number = 1;
 	public newsList: NewsFeed[] = [];
+	private feedSize: number = 30;
 
 	constructor(private apiService: ApiService, private route: ActivatedRoute) {
-		this.route.params.subscribe(params => {
-			this.pageNumber = params["page"];
-		});
+		this.currentPageNumber = +this.route.snapshot.params["page"];
+		this.feedType = this.route.snapshot.data["feedType"];
 	}
 
 	public ngOnInit() {
-		this.apiService.newsHttpRequest(this.pageNumber).subscribe(response => {
+		this.fetchNextFeed(this.currentPageNumber);
+	}
+
+	public fetchNextFeed(pageNumber) {
+		this.apiService.newsHttpRequest(this.feedType, pageNumber).subscribe(response => {
 			console.log(response);
 			this.newsList = response;
+			this.currentPageNumber = pageNumber;
+			this.feedStartNumber = (this.currentPageNumber - 1) * this.feedSize + 1;
+			this.nextPageNumber = this.currentPageNumber + 1;
 		});
 	}
 

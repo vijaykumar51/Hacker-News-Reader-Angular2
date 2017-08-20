@@ -1,9 +1,12 @@
 <div class="main-content">
 	<div class="list-container">
-		<ol start="1">
+		<ol start={{feedStartNumber}}>
 			<li class="news-element-container" *ngFor="let news of newsList">
 				<item [input]="news"></item>
 			</li>
 		</ol>
+	</div>
+	<div class="more-link-container">
+		<span class="more-link" (click)=fetchNextFeed(nextPageNumber)><a [routerLink]="['/news', nextPageNumber]">More >></a></span>
 	</div>
 </div>

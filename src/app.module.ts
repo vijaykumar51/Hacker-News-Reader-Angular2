@@ -17,7 +17,7 @@ const feedRoutes = [{
 
 const appRoutes: Routes = [
 	{ path: "", redirectTo: "news/1", pathMatch: "full" },
-	{ path: "news", children: feedRoutes },
+	{ path: "news", children: feedRoutes, data: { feedType: "news" } },
 	{ path: "show", component: ShowComponent },
 	{ path: "ask", component: AskComponent },
 	{ path: "jobs", component: JobComponent }
@@ -31,7 +31,4 @@ const appRoutes: Routes = [
 	providers: [ApiService],
 })
 export class AppModule {
-	constructor() {
-		console.log("App module initialized");
-	}
 }
