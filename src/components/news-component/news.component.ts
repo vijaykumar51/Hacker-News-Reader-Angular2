@@ -27,7 +27,7 @@ export class NewsComponent implements OnInit {
 	}
 
 	public fetchNextFeed(pageNumber) {
-		this.apiService.newsHttpRequest(this.feedType, pageNumber).subscribe(response => {
+		this.apiService.getFeeds(this.feedType, pageNumber).subscribe(response => {
 			console.log(response);
 			this.newsList = response;
 			this.currentPageNumber = pageNumber;

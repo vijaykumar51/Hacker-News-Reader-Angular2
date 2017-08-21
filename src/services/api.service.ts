@@ -11,7 +11,7 @@ export class ApiService {
 
 	constructor(private http: Http) { }
 
-	public newsHttpRequest(feedType: string, pageNumber: number): Observable<any> {
+	public getFeeds(feedType: string, pageNumber: number): Observable<any> {
 
 		let urlSearchParams: URLSearchParams = new URLSearchParams();
 		urlSearchParams.set("page", pageNumber.toString());
@@ -26,4 +26,15 @@ export class ApiService {
 			.catch((error: any) => Observable.throw(error.json().error || "Server Error"));
 	}
 
+	public getUserInfo(userId: string) {
+		let urlSearchParams: URLSearchParams = new URLSearchParams();
+		urlSearchParams.set("user", userId);
+
+		let requestOptions = new RequestOptions();
+		requestOptions.search = urlSearchParams;
+
+		return this.http.get(Config.urls["userInfo"]+"/"+userId)
+			.map((res: Response) => res.json())
+			.catch((error: any) => Observable.throw(error.json().error || "Server Error"));
+	}
 }

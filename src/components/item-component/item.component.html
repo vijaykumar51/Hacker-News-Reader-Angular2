@@ -4,9 +4,10 @@
 		<span class="domain">({{news.domain}})</span>
 	</div>
 	<div class="news-details">
+		{{news.user}} | {{news.id}}
 		<span class="points-by">{{news.points}} points by</span>
-		<a class="link" [routerLink]="['/user']">{{news.user}}</a>
+		<a class="link" [routerLink]="['/user', 'y4m4b4']">{{news.user}}</a>
 		<span class="user-time-info">{{news.time_ago}} |</span>
-		<a class="link" [routerLink]="['/item']">{{news.comments_count}} comments</a>
+		<a class="link" [routerLink]="['/item', 345]">{{news.comments_count}} comments</a>
 	</div>
 </div>
