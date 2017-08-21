@@ -18,9 +18,9 @@ const feedRoutes = [{
 const appRoutes: Routes = [
 	{ path: "", redirectTo: "news/1", pathMatch: "full" },
 	{ path: "news", children: feedRoutes, data: { feedType: "news" } },
-	{ path: "show", children: feedRoutes, data: { feedType: "news" } },
-	{ path: "ask", children: feedRoutes, data: { feedType: "news" } },
-	{ path: "jobs", children: feedRoutes, data: { feedType: "news" } },
+	{ path: "show", children: feedRoutes, data: { feedType: "show" } },
+	{ path: "ask", children: feedRoutes, data: { feedType: "ask" } },
+	{ path: "jobs", children: feedRoutes, data: { feedType: "jobs" } },
 	{ path: "user/:userId", component: UserComponent }
 ];
 
