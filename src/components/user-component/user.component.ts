@@ -9,7 +9,7 @@ import { ApiService } from "../../services/api.service";
 })
 export class UserComponent {
 	private userId: string;
-	private userInfo;
+	private userInfo = {};
 	constructor(private route: ActivatedRoute, private apiService: ApiService){
 		this.userId = this.route.snapshot.params["userId"];
 	}

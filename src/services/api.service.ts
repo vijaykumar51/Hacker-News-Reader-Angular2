@@ -27,13 +27,8 @@ export class ApiService {
 	}
 
 	public getUserInfo(userId: string) {
-		let urlSearchParams: URLSearchParams = new URLSearchParams();
-		urlSearchParams.set("user", userId);
 
-		let requestOptions = new RequestOptions();
-		requestOptions.search = urlSearchParams;
-
-		return this.http.get(Config.urls["userInfo"]+"/"+userId)
+		return this.http.get(Config.urls["userInfo"] + "/" + userId + ".json")
 			.map((res: Response) => res.json())
 			.catch((error: any) => Observable.throw(error.json().error || "Server Error"));
 	}

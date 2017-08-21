@@ -5,6 +5,6 @@ export class Config {
 		jobs: "https://node-hnapi.herokuapp.com/jobs",
 		news: "https://node-hnapi.herokuapp.com/news",
 		show: "https://node-hnapi.herokuapp.com/show",
-		userInfo: "https://angular2-hn.firebaseapp.com/user",
+		userInfo: "https://hacker-news.firebaseio.com/v0/user/", //add {userId}.json at the end
 	};
 }

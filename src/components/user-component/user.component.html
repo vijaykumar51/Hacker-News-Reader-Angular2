@@ -1,0 +1,7 @@
+<div class="user-info">
+	<div class="user-id"><b>User ID - </b><span>{{userInfo.id}}</span></div>
+	<div class="user-karma"><b>Points - </b><span>{{userInfo.karma}}</span></div>
+	<div class="user-description"><b>Description - </b><span [innerHTML]="userInfo.about"></span></div>
+	<div class="user-contribution"><b>Contributions - </b><span>{{userInfo.submitted?.length}}</span></div>
+	<!--{{userInfo.about}} {{userInfo.id}} {{userInfo.karma}} {{userInfo.submitted?.length}}-->
+</div>

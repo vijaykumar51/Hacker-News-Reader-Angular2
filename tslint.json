@@ -1,7 +1,7 @@
 {
-	"rulesDirectory": [
-		"./custom-linters/"
-	],
+	// "rulesDirectory": [
+	// 	"./custom-linters/"
+	// ],
 	"rules": {
 		"public-doc": false,
 		"no-imports": false,
